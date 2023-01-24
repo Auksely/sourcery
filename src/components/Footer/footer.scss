@@ -1,0 +1,31 @@
+@import '../../sass/variables';
+@import '../../sass/media-queries';
+
+.footer {
+  align-items: center;
+  background: $color-white;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 $spacing-xxl;
+  z-index: 1;
+
+  &__social-icons {
+    align-items: flex-end;
+    display: flex;
+    justify-content: center;
+
+    @include media-query-mobile {
+      padding: 0 6rem 0 0;
+    }
+  }
+
+  &__copyright {
+    color: map-get($map: $themes, $key: primary);
+    font-size: $font-size-s;
+    margin: $spacing-s;
+
+    @include media-query-mobile {
+      text-align: right;
+    }
+  }
+}

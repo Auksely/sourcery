@@ -1,0 +1,8 @@
+.image-holder {
+  margin: 0 auto;
+  max-width: 48rem;
+
+  &--right {
+    margin-left: auto;
+  }
+}
