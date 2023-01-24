@@ -1,0 +1,72 @@
+@import '../../sass/media-queries';
+@import '../../sass/variables';
+
+.success-screen {
+  color: $color-primary;
+  display: flex;
+  flex-wrap: wrap;
+  margin: $spacing-xxl 0;
+  min-height: 65vh;
+
+  @include media-query-mobile {
+    min-height: 60vh;
+  }
+
+  &__title {
+    flex: 1;
+    font: 700 4.8rem / 1.2 $font-family-headings;
+    margin: 0;
+    margin-bottom: $spacing-ml;
+
+    @include media-query-mobile {
+      font-size: 3.2rem;
+      margin-bottom: 0;
+      text-align: center;
+    }
+  }
+
+  &__content {
+    align-items: center;
+    display: flex;
+    gap: 8.4rem;
+    width: 100%;
+  }
+
+  &__submit-check {
+    align-items: center;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+  }
+
+  &__check-mark {
+    max-height: 10rem;
+    max-width: 10rem;
+
+    @include media-query-mobile {
+      max-width: 6rem;
+    }
+  }
+
+  &__heading {
+    font: 700 3.2rem / 1.5 $font-family-headings;
+    margin: $spacing-xxl 0 $spacing-ss;
+  }
+
+  &__submit-message {
+    font: 700 1.8rem / 1.5 $font-family;
+  }
+
+  &__picture {
+    flex: 1;
+
+    svg {
+      max-height: 38rem;
+      max-width: 62rem;
+    }
+
+    @include media-query-mobile {
+      display: none;
+    }
+  }
+}

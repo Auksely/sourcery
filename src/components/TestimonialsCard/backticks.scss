@@ -1,0 +1,14 @@
+.backticks {
+  font: 700 3.8rem / 0 var(--font-family-headings);
+
+  &__start {
+    position: absolute;
+  }
+
+  &__end {
+    bottom: 0;
+    position: absolute;
+    right: 0;
+    transform: rotate(180deg);
+  }
+}
