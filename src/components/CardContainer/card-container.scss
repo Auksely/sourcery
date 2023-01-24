@@ -1,0 +1,42 @@
+@import '../../sass/media-queries';
+@import '../../sass/variables';
+
+$themes: (
+  primary: var(--color-primary),
+  secondary: var(--color-secondary),
+  tertiary: var(--color-tertiary),
+  quaternary: var(--color-quaternary),
+);
+
+.card-container {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: $spacing-l;
+  width: 100%;
+
+  &__title {
+    font-size: 4.8rem;
+    font-weight: 700;
+    margin: 0;
+    padding: $spacing-l 0;
+
+    @include media-query-mobile {
+      font-size: 4rem;
+      font-weight: 700;
+    }
+
+    &--center {
+      align-self: center;
+    }
+
+    &--right {
+      align-self: end;
+    }
+
+    @each $key, $val in $themes {
+      &--#{$key} {
+        color: $val;
+      }
+    }
+  }
+}

@@ -1,0 +1,14 @@
+@import '../../sass/variables';
+
+.box-shadow {
+  background-color: $color-white;
+  border-radius: $radius-s;
+  box-shadow: -($spacing-m) $spacing-m $color-bkg-shadow;
+  overflow: hidden;
+
+  @each $key, $val in $themes {
+    &--#{$key} {
+      border: 2px solid $val;
+    }
+  }
+}
