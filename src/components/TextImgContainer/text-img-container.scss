@@ -1,0 +1,27 @@
+@import '../../sass/media-queries';
+
+.text-img-container {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  max-width: 140rem;
+
+  &--center {
+    margin: auto;
+  }
+
+  &--right {
+    margin-left: auto;
+    margin-right: 0;
+  }
+
+  &__left,
+  &__right {
+    flex: 1;
+  }
+
+  @include media-query-mobile {
+    display: block;
+    max-width: 100%;
+  }
+}

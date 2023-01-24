@@ -1,0 +1,45 @@
+@import '../../sass/variables';
+
+.video-box {
+  align-items: center;
+  aspect-ratio: 1 / 1;
+  border-radius: 30%;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+
+  &:hover {
+    opacity: 0.7;
+  }
+
+  img {
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &__button {
+    background-color: transparent;
+    border: transparent;
+    bottom: 0;
+    cursor: pointer;
+    left: 0;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+
+  @each $key, $val in $themes {
+    &--#{$key} {
+      width: 9rem;
+
+      path {
+        stroke: $val;
+        stroke-width: 3px;
+      }
+    }
+  }
+}

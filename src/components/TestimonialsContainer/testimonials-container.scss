@@ -1,0 +1,17 @@
+@import '../../sass/media-queries';
+
+.testimonials-container {
+  display: flex;
+  gap: 8rem;
+  justify-content: center;
+  margin: 2rem 0;
+
+  @include media-query-tablet {
+    flex-wrap: wrap;
+  }
+
+  &__card {
+    height: 100%;
+    width: 100%;
+  }
+}

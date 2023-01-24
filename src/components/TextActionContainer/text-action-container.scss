@@ -1,0 +1,135 @@
+@import '../../sass/variables';
+@import '../../sass/media-queries';
+$_padding-size-m: 5rem;
+
+.text-action-container {
+  display: flex;
+  flex-direction: column;
+
+  &--right {
+    align-items: flex-end;
+  }
+
+  &__title {
+    @each $key, $val in $themes {
+      &--#{$key} {
+        color: $val;
+      }
+    }
+
+    @each $key, $val in $heading-all-levels {
+      @if #{$key} == h1 {
+        &--#{$key} {
+          font-family: $font-family-headings;
+          font-size: $val;
+          font-weight: $font-weight-bold;
+        }
+      } @else {
+        &--#{$key} {
+          font-family: $font-family-headings;
+          font-size: $val;
+          margin: $spacing-s 0;
+        }
+      }
+    }
+
+    &--right {
+      padding-left: $_padding-size-m;
+      padding-right: 0;
+      text-align: right;
+    }
+
+    &--wrap {
+      word-spacing: 100rem;
+    }
+
+    @include media-query-mobile {
+      &--center {
+        text-align: center;
+      }
+
+      &--wrap {
+        text-align: center;
+        word-spacing: 0;
+      }
+    }
+  }
+
+  &__text {
+    color: $color-main-text;
+    font-family: $font-family;
+    font-size: $font-size-m;
+    line-height: $line-height-m;
+    padding-right: $_padding-size-m;
+
+    &--bold {
+      color: $color-main-text;
+      font-family: $font-family-headings;
+      font-size: map-get($map: $heading-all-levels, $key: h2);
+      font-weight: $font-weight-bold;
+    }
+
+    &--right {
+      padding-left: $_padding-size-m;
+      padding-right: 0;
+      text-align: right;
+    }
+  }
+
+  &__action {
+    margin-top: $spacing-l;
+    max-width: fit-content;
+
+    @include media-query-mobile {
+      margin: $spacing-m auto;
+    }
+  }
+
+  @include media-query-mobile {
+    &--right {
+      align-items: center;
+    }
+
+    &__title {
+      &--right {
+        font-size: 3rem;
+        padding: 0;
+        text-align: center;
+      }
+
+      &--left {
+        font-size: 3rem;
+        padding: 0;
+        text-align: center;
+      }
+    }
+
+    &__text {
+      font-size: 1.6rem;
+      margin-bottom: $spacing-xxl;
+      margin-left: auto;
+      margin-top: $spacing-s;
+      padding: 0;
+      text-align: center;
+
+      &--left {
+        margin-left: unset;
+        text-align: start;
+      }
+    }
+
+    h1 {
+      font-family: $font-family-headings;
+      font-size: 4rem;
+      font-weight: 700;
+      margin: $spacing-s;
+    }
+
+    h2 {
+      font-family: $font-family-headings;
+      font-size: 3rem;
+      font-weight: 700;
+      text-align: center;
+    }
+  }
+}
