@@ -1,0 +1,138 @@
+@import '../../sass/variables';
+@import '../../sass/media-queries';
+
+$themes: (
+  primary: var(--color-primary),
+  secondary: var(--color-secondary),
+  tertiary: var(--color-tertiary),
+  quaternary: var(--color-quaternary),
+);
+
+.carousel {
+  display: flex;
+  @each $key, $val in $themes {
+    &--#{$key} {
+      background-color: $val;
+    }
+  }
+
+  &__button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: $font-size-m;
+    height: 20%;
+    opacity: 0.5;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+
+    &:hover,
+    &:focus {
+      animation: fadeInFromNone 0.5s ease-out;
+      color: $color-white;
+      opacity: 1;
+    }
+
+    @keyframes fadeInFromNone {
+      0% {
+        opacity: 0;
+      }
+
+      100% {
+        opacity: 1;
+      }
+    }
+
+    &--close {
+      background: transparent;
+      font-size: 3rem;
+      height: 1.5rem;
+      margin-top: $spacing-sm;
+      right: 1rem;
+      top: 0.5rem;
+      z-index: 3;
+
+      @include media-query-mobile {
+        height: 2.5rem;
+        margin-top: $spacing-sm;
+        right: 1rem;
+        top: 25rem;
+        z-index: 3;
+      }
+    }
+
+    .icon {
+      color: $color-white;
+      font-size: 3rem;
+      margin: auto;
+
+      :hover,
+      :focus {
+        color: $color-white;
+        opacity: 1;
+        transform: scale(1.1);
+      }
+    }
+
+    &--prev,
+    &--next {
+      &:hover,
+      &:focus {
+        background-color: $color-bkg-button;
+      }
+    }
+
+    &--prev {
+      left: 0;
+    }
+
+    &--next {
+      right: 0;
+    }
+  }
+
+  &__image {
+    height: auto;
+    object-fit: cover;
+    width: 100%;
+
+    @include media-query-mobile {
+      height: 32rem;
+      object-fit: contain;
+    }
+  }
+
+  &__arrow {
+    background: 0;
+    border: solid $color-white;
+    border-bottom: 3px solid $color-white;
+    border-right: 3px solid $color-white;
+    border-width: 0 3px 3px 0;
+    cursor: pointer;
+    display: inline-block;
+    height: 2.3rem;
+    margin: $spacing-s;
+    transform: rotate(-45deg);
+    width: 23px;
+
+    &--left {
+      transform: rotate(135deg);
+    }
+
+    &--right {
+      transform: rotate(-45deg);
+    }
+  }
+
+  .video-player {
+    height: auto;
+    width: 100%;
+
+    @include media-query-mobile {
+      height: 32rem;
+      width: 100%;
+    }
+  }
+}

@@ -1,0 +1,54 @@
+@import 'src/sass/media-queries';
+@import 'src/sass/variables';
+
+.modal-container {
+  &__content {
+    border-radius: $radius-xs;
+    left: 50%;
+    overflow-y: auto;
+    position: fixed;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 11;
+
+    @include media-query-mobile {
+      width: 45rem;
+    }
+
+    &--min {
+      width: 40rem;
+    }
+
+    &--med {
+      width: 75rem;
+
+      @include media-query-tablet {
+        width: 65rem;
+      }
+      @include media-query-mobile {
+        width: 45rem;
+      }
+    }
+
+    &--max {
+      width: 83rem;
+      @include media-query-tablet {
+        width: 75rem;
+      }
+      @include media-query-mobile {
+        width: 55rem;
+      }
+    }
+  }
+
+  &__overlay {
+    background: rgba(0, 0, 0, 0.5);
+    border: 0;
+    bottom: 0;
+    left: 0;
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 10;
+  }
+}

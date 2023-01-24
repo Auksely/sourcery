@@ -1,0 +1,33 @@
+@import '../../sass/media-queries';
+
+.media-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 4rem;
+
+  &__item {
+    height: 24rem;
+    width: calc(25% - 4rem * 3 / 4);
+
+    &--extended {
+      width: calc(50% - 4rem / 2);
+    }
+  }
+
+  @include media-query-mobile {
+    &__item {
+      width: calc(50% - 4rem / 2);
+    }
+
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+  }
+
+  &--mobile {
+    height: 32rem;
+    position: relative;
+    width: 100%;
+  }
+}
