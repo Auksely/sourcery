@@ -1,0 +1,77 @@
+@import '../../sass/media-queries';
+@import '../../sass/variables';
+
+.academies-container {
+  height: 100vh;
+  position: relative;
+
+  @include media-query-mobile {
+    height: 100%;
+    margin-bottom: $spacing-xxl;
+    margin-top: $spacing-xxl;
+  }
+
+  &__particles {
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: -1;
+  }
+
+  &__text {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: center;
+    width: 100%;
+  }
+
+  &__header {
+    color: $color-primary;
+    font: 700 4.8rem / 1.25 $font-family-headings;
+    margin: 0;
+    padding: 0;
+
+    @include media-query-mobile {
+      font-size: 4rem;
+    }
+  }
+
+  &__description {
+    color: $color-main-text;
+    font-family: $font-family;
+    font-size: 1.8rem;
+    line-height: 1.5;
+    margin: $spacing-l 0 0;
+    max-width: 102rem;
+    padding: 0;
+    text-align: center;
+
+    @include media-query-mobile {
+      font-size: 1.6rem;
+    }
+  }
+
+  &__vertical-line {
+    border-left: 0.2rem solid $color-primary;
+    height: 5rem;
+    margin: $spacing-xl 0 $spacing-l;
+  }
+
+  &__rounded-arrow {
+    background-color: var(--color-white);
+    border-style: none;
+    cursor: pointer;
+    height: 5rem;
+    padding: 0;
+    transition: transform 0.2s ease-in-out;
+    width: 5rem;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+}
